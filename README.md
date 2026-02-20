@@ -1,4 +1,4 @@
-# 🛡️ SMFresh: A Verifiable Subgraph Matching Scheme with Freshness Assurance
+# 🛡️ SMFresh: A Freshness-Aware Verification Scheme for Outsourced Subgraph Matching
 
 <p align="left">
   <img src="https://img.shields.io/badge/Python-3.8+-blue.svg" alt="Python Version">
@@ -114,5 +114,6 @@ The verification functions (`verify_integrity` and `TSFVP_PSICVP`) will strictly
 ---
 
 ## 📄 6. License
+
 
 This project is licensed under the **MIT License**.
