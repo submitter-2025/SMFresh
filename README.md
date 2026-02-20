@@ -5,7 +5,7 @@
   <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License">
 </p>
 
-> **Note:** This repository is the official implementation of the paper *"SMFresh: A Verifiable Subgraph Matching Scheme with Freshness Assurance for Outsourced Graph Databases"*.
+> **Note:** This repository is the official implementation of the paper *"SMFresh: A Freshness-Aware Verification Scheme for Outsourced Subgraph Matching"*.
 
 SMFresh is a lightweight, strictly **output-sensitive** framework for secure and verifiable subgraph matching over dynamically updated graph databases. It provides rigorous cryptographic guarantees for <span style="color:#E53935">**Integrity**</span>, <span style="color:#1E88E5">**Freshness**</span>, and <span style="color:#43A047">**Correctness**</span> under the split-trust threat model.
 
@@ -117,3 +117,4 @@ The verification functions (`verify_integrity` and `TSFVP_PSICVP`) will strictly
 
 
 This project is licensed under the **MIT License**.
+
