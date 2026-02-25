@@ -1,11 +1,11 @@
-# 🛡️ SMFresh: A Freshness-Aware Verification Scheme for Outsourced Subgraph Matching
+# 🛡️ SMFresh: A Verifiable Subgraph Matching Scheme with Freshness Assurance
 
 <p align="left">
   <img src="https://img.shields.io/badge/Python-3.8+-blue.svg" alt="Python Version">
   <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License">
 </p>
 
-> **Note:** This repository is the official implementation of the paper *"SMFresh: A Freshness-Aware Verification Scheme for Outsourced Subgraph Matching"*.
+> **Note:** This repository is the official implementation of the paper *"SMFresh: A Verifiable Subgraph Matching Scheme with Freshness Assurance for Outsourced Graph Databases"*.
 
 SMFresh is a lightweight, strictly **output-sensitive** framework for secure and verifiable subgraph matching over dynamically updated graph databases. It provides rigorous cryptographic guarantees for <span style="color:#E53935">**Integrity**</span>, <span style="color:#1E88E5">**Freshness**</span>, and <span style="color:#43A047">**Correctness**</span> under the split-trust threat model.
 
@@ -46,33 +46,33 @@ Please download the following datasets, extract them, and place them into the `G
 The entry file for all experiments is now **`Main.py`**, which is fully controllable via arguments. For automated batch testing to reproduce the paper's figures, simply use the provided **`RUN.sh`** script.
 
 ### 📍 Scenario 1: Performance on `em`, `db`, and `yt`
-*(Corresponding to **Fig. 6** in the paper)*
+*(Corresponding to **Fig. 4** in the paper)*
 
 To test the basic query performance across standard datasets, run:
 ```bash
-./RUN.sh fig6
+./RUN.sh fig4
 ```
 > **What this does:** It iterates over datasets 0 (em), 1 (db), and 2 (yt) using predefined query topologies (e.g., `3n3e`, `5n6e`) with a default batch size of 5,000.
 
 ### 📍 Scenario 2: Scalability Stress-test on `pt`
-*(Corresponding to **Fig. 7** in the paper)*
+*(Corresponding to **Fig. 5** in the paper)*
 
 To test how SMFresh resists data volume explosions on the massive Patents graph (scaling from 20k to 2.56M nodes), run:
 ```bash
-./RUN.sh fig7
+./RUN.sh fig5
 ```
 > **What this does:** It automatically triggers the `--scale` argument in `Main.py` to incrementally sample and build the graph, recording the strictly output-sensitive verification times.
 
 ### 📍 Scenario 3: Sensitivity Analysis on Dynamic Streams (`wt` & `sy`)
-*(Corresponding to **Fig. 10 & Fig. 11** in the paper)*
+*(Corresponding to **Fig. 7 & Fig. 8** in the paper)*
 
 To conduct a controlled-variable analysis (varying Batch Size, Temporal Structure Size, and Query Size) on temporal graphs:
 ```bash
 # For Wiki-Talk (wt)
-./RUN.sh fig10
+./RUN.sh fig7
 
 # For Synthetic Graph (sy)
-./RUN.sh fig11
+./RUN.sh fig8
 ```
 > **What this does:** It fixes specific variables while sweeping others (e.g., varying batch sizes from 500 to 320k) to demonstrate the amortization effects and system throughput.
 
@@ -115,6 +115,4 @@ The verification functions (`verify_integrity` and `TSFVP_PSICVP`) will strictly
 
 ## 📄 6. License
 
-
 This project is licensed under the **MIT License**.
-
